@@ -1,0 +1,32 @@
+% function pipe_flow
+dim_mat = [1 0 0 1 0;-3 1 1 -1 1;0 -1 0 -1 0];
+m=5;
+
+rho_0 = 1.2;    tol1 = 0.01;
+u_0 = 0.1;      tol2 = 1e-4;
+% u_0=0.01;
+d_0 = 0.001;    tol3 = 1e-4;
+mu_0 = 1e-5;    tol4 = 1e-7;
+eps_0 = 1e-3;   tol5 = 1e-6;
+
+tolerance = [-tol1, tol1 ;
+    -tol2, tol2 ;
+    -tol3, tol3 ;
+    -tol4, tol4;
+    -tol5, tol5];
+
+for i=1:5
+    for j=1:2
+        
+        
+    end
+end
+%%
+Q_nom = [rho_0,u_0,d_0,mu_0,eps_0];
+
+f = friction(Q_nom);
+del_p = 1/2 * f * Q_nom(2)^2 / (Q_nom(3) * 9.8);
+
+disp(['f = ',num2str(f),', del_p/L = ', num2str(del_p)]);
+
+% end
